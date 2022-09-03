@@ -54,7 +54,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Problems\Fibonacci.cs" />
+    <Compile Include="Problems\GridTraveler.cs" />
     <Compile Include="Problems\ISolution.cs" />
+    <Compile Include="Problems\Problem.cs" />
     <Compile Include="Problems\ProblemSetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

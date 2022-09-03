@@ -8,7 +8,8 @@ namespace Algorithms.Problems
 {
     internal interface ISolution
     {
-        object Run(object val);
+        void ToggleMemo(bool IsMemo);
+        object Run(object num);
         string TimeComplexity();
         string SpaceComplexity();
     }
