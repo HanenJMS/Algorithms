@@ -1,14 +1,6 @@
 ﻿using Algorithms.Controls;
-using Algorithms.Problems;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Algorithms
@@ -16,7 +8,7 @@ namespace Algorithms
     public partial class Form1 : Form
     {
         Client client;
-        ProblemSetter solution;
+        ProblemController solution;
         Stopwatch stopwatch;
         public Form1()
         {
@@ -25,8 +17,9 @@ namespace Algorithms
         private void Form1_Load(object sender, EventArgs e)
         {
             client = new Client();
-            solution = new ProblemSetter();
+            solution = new ProblemController();
             stopwatch = new Stopwatch();
+            client.currentSolution = solution;
             solution.SetFibonacci();
             LabelTextUpdate();
             button1.Text = "Enter";
@@ -38,7 +31,6 @@ namespace Algorithms
         private void button1_Click(object sender, EventArgs e)
         {
             stopwatch.Restart();
-            client.SolutionChange(solution.GetCurrentSolution());
             LabelTextUpdate();
             stopwatch.Start();
             textBox2.Text = client.Run(textBox1.Text) + "";
@@ -52,7 +44,7 @@ namespace Algorithms
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            solution.SetGridTravler();
+            solution.SetGridTraveler();
             LabelTextUpdate();
         }
         private void button3_Click(object sender, EventArgs e)
@@ -67,6 +59,7 @@ namespace Algorithms
             label3.Text = $"SpaceComplexity: {solution.SpaceComplexity()}";
             label4.Text = $"Memoized Solution: {solution.IsMemo}";
             label5.Text = $"Time: {stopwatch.Elapsed.ToString()}";
+            label6.Text = $"Instructions: {solution.Instructions()}";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Algorithms.Problems
+﻿namespace Algorithms.Interfaces
 {
     internal interface ISolution
     {
@@ -12,5 +6,6 @@ namespace Algorithms.Problems
         object Run(object num);
         string TimeComplexity();
         string SpaceComplexity();
+        string Instructions();
     }
 }

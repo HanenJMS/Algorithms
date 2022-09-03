@@ -53,11 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Problems\CanSum.cs" />
     <Compile Include="Problems\Fibonacci.cs" />
     <Compile Include="Problems\GridTraveler.cs" />
-    <Compile Include="Problems\ISolution.cs" />
+    <Compile Include="Interfaces\ISolution.cs" />
     <Compile Include="Problems\Problem.cs" />
-    <Compile Include="Problems\ProblemSetter.cs" />
+    <Compile Include="Controls\ProblemController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

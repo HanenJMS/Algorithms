@@ -1,8 +1,6 @@
-﻿using System;
+﻿using Algorithms.Controls;
+using Algorithms.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Algorithms.Problems
 {
@@ -10,13 +8,19 @@ namespace Algorithms.Problems
     {
         public int FibSequence(int n)
         {
-            if(n <= 2)
+            if (n <= 2)
             {
                 return 1;
             }
             return FibSequence(n - 1) + FibSequence(n - 2);
         }
-        public int MemoSequence(int n, Dictionary<int, int> memo)
+
+        public string Instructions()
+        {
+            return "enter whole numbers. i.e. 123 not 12.3 or 12,3";
+        }
+
+        public uint MemoSequence(int n, Dictionary<int, uint> memo)
         {
             if (memo.ContainsKey(n)) return memo[n];
             if (n <= 2)
@@ -29,32 +33,34 @@ namespace Algorithms.Problems
 
         public object Run(object num)
         {
-            if(IsMemo)
+            if (int.TryParse(num as string, out int result))
             {
-                return RunMemo(num);
+                if (IsMemo)
+                {
+                    return RunMemo(result);
+                }
+                return RunNormal(result);
             }
-            return RunNormal(num);
+            return "Invalid Input";
         }
 
-        public object RunMemo(object num)
+        public override object RunMemo(object num)
         {
             int n = (int)num;
-            Dictionary<int, int> memo = new Dictionary<int, int>();
+            Dictionary<int, uint> memo = new Dictionary<int, uint>();
             return MemoSequence(n, memo);
         }
 
-        public object RunNormal(object num)
+        public override object RunNormal(object num)
         {
             int n = (int)num;
             return FibSequence(n);
         }
-
         public string SpaceComplexity()
         {
             if (IsMemo) return "n";
             return "n";
         }
-
         public string TimeComplexity()
         {
             if (IsMemo) return "n";

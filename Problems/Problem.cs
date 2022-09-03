@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Algorithms.Interfaces;
 
 namespace Algorithms.Problems
 {
@@ -13,5 +9,7 @@ namespace Algorithms.Problems
         {
             this.IsMemo = IsMemo;
         }
+        public abstract object RunNormal(object num);
+        public abstract object RunMemo(object num);
     }
 }
