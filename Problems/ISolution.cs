@@ -9,5 +9,7 @@ namespace Algorithms.Problems
     internal interface ISolution
     {
         object Run(object val);
+        string TimeComplexity();
+        string SpaceComplexity();
     }
 }

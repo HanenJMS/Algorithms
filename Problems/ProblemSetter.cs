@@ -17,5 +17,13 @@ namespace Algorithms.Problems
         {
             return currentProblem;
         }
+        public string TimeComplexity()
+        {
+            return currentProblem.TimeComplexity();
+        }
+        public string SpaceComplexity()
+        {
+            return currentProblem.SpaceComplexity();
+        }
     }
 }

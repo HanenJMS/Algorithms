@@ -22,5 +22,15 @@ namespace Algorithms.Problems
             int n = (int)num;
             return FibSequence(n);
         }
+
+        public string SpaceComplexity()
+        {
+            return "n";
+        }
+
+        public string TimeComplexity()
+        {
+            return "2^n";
+        }
     }
 }

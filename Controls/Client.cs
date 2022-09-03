@@ -22,5 +22,6 @@ namespace Algorithms.Controls
         {
             currentSolution = solution;
         }
+
     }
 }

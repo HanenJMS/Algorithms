@@ -44,6 +44,8 @@ namespace Algorithms
         private void LabelTextUpdate()
         {
             label1.Text = $"Current: {solution.GetCurrentSolution()}";
+            label2.Text = $"TimeComplexity: {solution.TimeComplexity()}";
+            label3.Text = $"SpaceComplexity: {solution.SpaceComplexity()}";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
